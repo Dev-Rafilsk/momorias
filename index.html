@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Jardim de Amor</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcf8f3;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 50px;
+            overflow-x: hidden;
+        }
+
+      
+        .decoration-leaf {
+            position: fixed;
+            background-color: #81c784;
+            opacity: 0.7;
+            animation: floatLeaf 20s infinite ease-in-out;
+            z-index: -1;
+            border-radius: 50% 0 50% 0;
+        }
+
+        .decoration-leaf:nth-child(1) { width: 40px; height: 40px; top: 10%; left: 5%; animation-delay: 0s; background-color: #a5d6a7; }
+        .decoration-leaf:nth-child(2) { width: 30px; height: 30px; top: 20%; left: 15%; animation-delay: 2s; background-color: #66bb6a; border-radius: 0 50% 0 50%; }
+        .decoration-leaf:nth-child(3) { width: 50px; height: 50px; top: 30%; left: 8%; animation-delay: 4s; background-color: #81c784; }
+        .decoration-leaf:nth-child(4) { width: 35px; height: 35px; top: 45%; left: 2%; animation-delay: 6s; background-color: #a5d6a7; border-radius: 0 50% 0 50%; }
+        .decoration-leaf:nth-child(5) { width: 45px; height: 45px; top: 60%; left: 12%; animation-delay: 8s; background-color: #66bb6a; }
+        .decoration-leaf:nth-child(6) { width: 30px; height: 30px; top: 15%; right: 7%; animation-delay: 1s; background-color: #a5d6a7; }
+        .decoration-leaf:nth-child(7) { width: 50px; height: 50px; top: 25%; right: 18%; animation-delay: 3s; background-color: #81c784; border-radius: 0 50% 0 50%; }
+        .decoration-leaf:nth-child(8) { width: 35px; height: 35px; top: 40%; right: 5%; animation-delay: 5s; background-color: #66bb6a; }
+        .decoration-leaf:nth-child(9) { width: 40px; height: 40px; top: 55%; right: 10%; animation-delay: 7s; background-color: #a5d6a7; border-radius: 0 50% 0 50%; }
+        .decoration-leaf:nth-child(10) { width: 25px; height: 25px; top: 70%; right: 3%; animation-delay: 9s; background-color: #81c784; }
+        .decoration-leaf:nth-child(11) { width: 30px; height: 30px; top: 80%; left: 20%; animation-delay: 11s; background-color: #66bb6a; }
+        .decoration-leaf:nth-child(12) { width: 45px; height: 45px; top: 90%; left: 50%; animation-delay: 13s; background-color: #a5d6a7; border-radius: 0 50% 0 50%; }
+        .decoration-leaf:nth-child(13) { width: 25px; height: 25px; top: 85%; right: 15%; animation-delay: 15s; background-color: #81c784; }
+        .decoration-leaf:nth-child(14) { width: 35px; height: 35px; top: 75%; left: 30%; animation-delay: 5s; background-color: #a5d6a7; }
+        .decoration-leaf:nth-child(15) { width: 40px; height: 40px; top: 5%; left: 50%; animation-delay: 7s; background-color: #66bb6a; border-radius: 0 50% 0 50%; }
+
+        @keyframes floatLeaf {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-30px) rotate(25deg); opacity: 0.9; }
+            100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.8rem;
+            color: #2e7d32; 
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .message {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #43a047; /* Verde médio para a mensagem */
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 10px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            border: 4px solid #FFA500; 
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            border-color: #FF7F50; 
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 1.2rem;
+            color: #2e7d32;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(20, 20, 70, 0.9); 
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 85%; 
+            max-height: 75%; 
+            border-radius: 10px;
+        }
+
+        .modal-caption {
+            text-align: center;
+            color: #f1f1f1;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+            font-style: italic;
+            max-width: 70%;
+            line-height: 1.4;
+        }
+
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            color: #f1f1f1;
+            font-size: 45px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #FFA500; 
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.8rem; }
+            .message { font-size: 1rem; }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            .gallery img { height: 200px; }
+            .close { font-size: 35px; top: 15px; right: 20px; }
+            .modal-content { max-height: 70%; }
+            .modal-caption { font-size: 1rem; max-width: 90%; }
+            
+            .decoration-leaf:nth-child(n+5) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+    <div class="decoration-leaf"></div>
+
+    <div class="container">
+        <header>
+            <h1>❤️NOSSO JARDIM DO AMOR❤️</h1>
+        </header>
+
+        <main>
+            <p class="message">
+                Assim como um jardim, nosso amor precisa de cuidado, luz e tempo para crescer. E veja só a floresta que cultivamos! Cada memória aqui é uma folha na nossa árvore. Te amo!
+            </p>
+
+            <div class="gallery">
+                <img src= "primeiranoite.jpg" alt="Nossa primeira noite">
+                <img src="cheirinho.jpg" alt="Decidimos morar juntos">
+                <img src="cockian.jpg" alt="Sua alegria é a minha">
+                <img src="porto.jpg" alt="Nossa primeira viagem juntos">
+                <img src="seusorriso.jpg" alt="Esse sorriso me desmonta">
+                <img src="1ilha.jpg" alt="Mais uma viagem incrível">
+                <img src="jantar.jpg" alt="Nosso jantar romântico em casa">
+                <img src="sanju.jpg" alt="São João com meu amor">
+                <img src="eclipse.jpg" alt="Vendo o eclipse, o primeiro de muitos">
+                <img src="seusorriso.jpg" alt="Eu não canso de admirar...">
+                <img src="casinha1.jpg" alt="A chave da nossa primeira casa!">
+                <img src="casinha2.jpg" alt="Celebrando nosso novo lar">
+                <img src="chapada1.jpg" alt="Aventureiros na Chapada">
+                <img src="chapada2.jpg" alt="A vista do topo do mundo, com você">
+                <img src="casamento.jpg" alt="O 'Sim' mais feliz da minha vida">
+                <img src="casamos3.jpg" alt="Oficialmente Sr. e Sra.!">
+                <img src="formanda.jpg" alt="Orgulho da minha formanda!">
+                <img src="itacare1.jpg" alt="Relaxando em Itacaré">
+                <img src="itacare2.jpg" alt="Sempre procurando a próxima vista">
+                <img src="urubu.jpg" alt="Até o mirante do urubu ficou lindo">
+                <img src="rv.jpg" alt="Começo de 2024, prontos para mais!">
+            </div>
+        </main>
+
+        <footer>
+            <p>Nosso amor cresce a cada dia! </p>
+            <p>Com todo meu amor, Rafilsk!</p>
+        </footer>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption" class="modal-caption"></div>
+    </div>
+
+    <script>
+        
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        var closeModal = document.getElementById("closeModal");
+        var galleryImages = document.querySelectorAll(".gallery img");
+        var modalCaption = document.getElementById("modalCaption");
+
+        galleryImages.forEach(function(img) {
+            img.onclick = function() {
+                modal.style.display = "flex"; 
+                modalImg.src = this.src;
+
+                modalCaption.textContent = this.alt; 
+            }
+        });
+
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        modal.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
